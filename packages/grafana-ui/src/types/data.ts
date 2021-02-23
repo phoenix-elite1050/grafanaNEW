@@ -48,24 +48,16 @@ export enum NullValueMode {
 }
 
 /** View model projection of many time series */
-export interface TimeSeriesVMs {
-  [index: number]: TimeSeriesVM;
-  length: number;
-}
+export type TimeSeriesVMs = TimeSeriesVM[];
 
-interface Column {
-  text: string;
-  title?: string;
-  type?: string;
-  sort?: boolean;
-  desc?: boolean;
-  filterable?: boolean;
+export interface Column {
+  text: string; // The column name
+  type?: 'time' | 'number' | 'string' | 'object'; // not used anywhere? can we remove?
+  filterable?: boolean; // currently only set by elasticsearch, and used in the table panel
   unit?: string;
 }
 
 export interface TableData {
   columns: Column[];
   rows: any[];
-  type: string;
-  columnMap: any;
 }
