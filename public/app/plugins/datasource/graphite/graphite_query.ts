@@ -98,11 +98,7 @@ export default class GraphiteQuery {
         this.functions.push(innerFunc);
         break;
       case 'series-ref':
-        if (this.segments.length > 0) {
-          this.addFunctionParameter(func, astNode.value);
-        } else {
-          this.segments.push(astNode);
-        }
+        this.addFunctionParameter(func, astNode.value);
         break;
       case 'bool':
       case 'string':
