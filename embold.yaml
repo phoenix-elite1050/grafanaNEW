@@ -22,6 +22,8 @@ sources:
     - 'libs'
     - '.git'
     - 'demosubproject'
+    - '.go'
+    - '.java'
 
 #Specify modules you would like to enable or disable.
 modules:
